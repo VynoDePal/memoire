@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center ">
+    <div class="col-md-6 shadow shadow-lg">
+       
+        <form action="" method="post" class="m-5">
+            {% if messages %}
+            {% for message in messages %}
+                <h3 {% if message.tags %}class="{{message.tags}} alert alert-danger text-center text-dark"{% endif%}>{{message}}</h3>
+            {% endfor %}
+        {% endif %}
+           
+                {% csrf_token %}
+                     {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                         <p class='text-danger'> {{error}}</p>
+                 {% endfor %}
+                {% endif %}
+            <h3 class="alert text-center text-info "style="font-family: 'Poppins', sans-serif; ">SignUp</h3>
+            
+            {% for fm in form %}
+                {{fm.label_tag}}{{fm}}{{fm.errors|striptags}}
+            {% endfor %}
+            <input type="submit"value="Submit"class="btn btn-outline-success  mt-4 mb-4">
+            <a href="{% url 'login' %}">Login</a>
+        </form>
+       
+    
+    </div>
+</div>
+
+{% endblock content %}
+

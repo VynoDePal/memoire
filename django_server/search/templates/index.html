@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil De Recherche</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+</head>
+
+<body>
+    
+    <div class="section">
+
+        <div class="logoHautGauche">Archives, Trésor Public.</div>
+
+        <div class="listeTopDroite">
+            <div class="item"> </div>
+            <div class="item"> DISPONIBILITÉ - PROBITÉ - DISCRETION </div>
+            <div class="item">  </div>
+            <div class="item">
+                <a href="{% url 'logout' %}"class="btn btn-dark btn-sm">Déconnection</a>
+            </div>
+        </div>
+
+        <div class="titre">
+            <h1>Recherchez Votre Archive.</h1>
+        </div>
+        <form class="flexForm">
+
+            <label for="search">
+                <img src="{% static 'icone.svg' %}" alt="icône">
+            </label>
+
+            <input type="search" id="search" autocomplete="off" name="recherche" placeholder=" ">
+            <!--<a href="{% url 'barred_search' %}"> </a>-->
+            <button type="submit"> <!--<a href="{% url 'barred_search' %}">--> Rechercher <!--</a>--> </button>
+            <!--<input class="button" type="search" onclick="windows.location = '{% url 'barred_search' %}'" name="recherche" ; value="">-->
+        </form>
+    </div>
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Boostrap JS CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #333333;
+    height: 100vh;
+}
+
+
+.section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  /* Titre au dessus de l'input*/
+    background-image: url("../archives.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.logoHautGauche {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 22px;
+    color: #f1f1ff;
+}
+
+
+.listeTopDroite {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    display: flex;   /* texte les uns à la suite des autres*/
+}
+
+
+.item {
+    margin: 10px;
+    color: #f1f1ff;
+    cursor: pointer;
+}
+
+
+.titre h1{
+    font-size: 75px;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+.flexForm {
+    display: flex;
+    z-index: 10;
+    position: relative;
+    width: 500px;
+    box-shadow: 4px 8px 16px rgba(0,0,0,0.3);
+    margin-bottom: 200px;
+}
+
+
+.flexForm > * {                /* Cible les 1er éléments dans le formulaire */
+    border: 0;
+    padding: 0 0 0 10px;
+    background: #fff;
+    line-height: 50px;
+    font-size: 16px;
+    border-radius: 0;
+    outline: 0;
+}
+
+
+input[type="search"] {
+    flex-basis: 500px;    /* Comme width pour les éléments flex*/ 
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+
+label img {
+    width: 30px;
+    position: relative;
+    top: 5px;
+}
+
+
+.flexForm button {
+    background: #4b16bd;
+    border: 1px solid #4b16bd;
+    color: #fff;
+    padding: 0 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.flexForm a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.flexForm button:hover {
+    background: #8a63dd;
+    border: 1px solid #8a63dd;
+}
